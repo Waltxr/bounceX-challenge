@@ -1,6 +1,7 @@
 (global => {
-  let numOfItems = document.getElementsByClassName("minicart-quantity").length
-  let orderTotal = document.getElementsByClassName("order-value")[0].firstChild.textContent
+  let numOfItems = document.getElementsByClassName("minicart-quantity")[0].firstChild.textContent
+  let orders = document.getElementsByClassName("order-value")[0]
+  let orderTotal = ( orders ? orders.firstChild.textContent : '$0')
   let itemImages = []
   let imageHTML = document.getElementsByClassName("mini-cart-image")
 
@@ -146,7 +147,6 @@
     let overlayData = document.getElementById("data")
     closeButtonContainer.appendChild(closeButton)
     overlayData.appendChild(closeButtonContainer)
-
   }
 
   showOverlay = () => {
@@ -164,7 +164,7 @@
 
   window.addEventListener('scroll', function(e) {
     newScrollPosition = window.scrollY
-    if (newScrollPosition > scrollPosition && newScrollPosition + windowHeight >= bottom10Percent && !document.getElementById("overlay")) {
+    if (newScrollPosition > scrollPosition && newScrollPosition + windowHeight >= bottom10Percent && !document.getElementById("overlay") && numOfItems > 2) {
       showOverlay()
     }
     scrollPosition = newScrollPosition
