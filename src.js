@@ -27,24 +27,9 @@
   }
 
   styleOverlay = (outerDiv, dataDiv) => {
-    outerDiv.style['text-align'] = 'center'
-    outerDiv.style.position = 'fixed'
-    outerDiv.style.width = '100%'
-    outerDiv.style.height = '100%'
-    outerDiv.style.top = '0'
-    outerDiv.style.left = '0'
-    outerDiv.style.right = '0'
-    outerDiv.style.bottom = '0'
-    outerDiv.style['background-color'] = 'rgba(0,0,0,0.5)'
-    outerDiv.style['z-index'] = '2'
-    outerDiv.style.cursor = 'pointer'
-
+    outerDiv.style.cssText = 'text-align: center; position: fixed; width: 100%; height: 100%; top: 0; right: 0; left: 0; bottom: 0; background-color: rgba(0,0,0,0.5; z-index: 2; margin-top: 125px;'
     dataDiv.className = 'grid-container'
-    dataDiv.style['background-color'] = '#fff'
-    dataDiv.style.width = '500px'
-    dataDiv.style.height = '500px'
-    dataDiv.style.display = 'inline-block'
-    dataDiv.style['margin-top'] = '125px'
+    dataDiv.style.cssText = 'background-color: #fff; width: 500px; height: 500px; display: inline-block; margin-top: 125px;'
   }
 
   createOverlayHeader = () => {
@@ -164,7 +149,7 @@
 
   window.addEventListener('scroll', function(e) {
     newScrollPosition = window.scrollY
-    if (newScrollPosition > scrollPosition && newScrollPosition + windowHeight >= bottom10Percent && !document.getElementById("overlay") && numOfItems > 2) {
+    if (newScrollPosition > scrollPosition && newScrollPosition + windowHeight >= bottom10Percent && !document.getElementById("overlay")) {
       showOverlay()
     }
     scrollPosition = newScrollPosition
