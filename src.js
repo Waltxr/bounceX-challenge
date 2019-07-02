@@ -1,6 +1,6 @@
 (global => {
   let numOfItems = document.getElementsByClassName("minicart-quantity").length
-  let orderTotal = document.getElementsByClassName("order-value")[0].firstChild
+  let orderTotal = document.getElementsByClassName("order-value")[0].firstChild.textContent
   let itemImages = []
   let imageHTML = document.getElementsByClassName("mini-cart-image")
 
@@ -109,7 +109,7 @@
   createSubtotalSpan = () => {
     let subtotalSpan = document.createElement('span')
     subtotalSpan.setAttribute("id", "subtotal-span")
-    subtotalSpan.innerHTML = 'Subtotal: ' + orderTotal.textContent
+    subtotalSpan.innerHTML = 'Subtotal: ' + orderTotal
     subtotalSpan.style['font-size'] = '18px'
 
     let overlayData = document.getElementById("data")
