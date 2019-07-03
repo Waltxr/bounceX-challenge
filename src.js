@@ -128,7 +128,6 @@
     closeButton.type = 'button'
     closeButton.onclick = function() { closeOverlay() }
 
-
     let overlayData = document.getElementById("data")
     closeButtonContainer.appendChild(closeButton)
     overlayData.appendChild(closeButtonContainer)
